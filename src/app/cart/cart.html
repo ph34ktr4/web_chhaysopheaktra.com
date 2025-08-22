@@ -1,0 +1,60 @@
+<div class="container cart-container my-5 p-4 shadow rounded bg-white">
+  <h3 class="mb-4 text-center text-primary">🛒 Shopping Cart</h3>
+
+  <table class="table table-bordered table-hover align-middle">
+    <thead class="thead-dark text-center">
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of cartService.GetItem(); track item.id) {
+        <tr>
+          <td class="text-center">
+            <img [src]="item.imageUrl" onerror="this.src='/no_image.png';" class="product-img rounded shadow-sm" [alt]="item.imageUrl">
+          </td>
+          <td>
+            <h5 class="mb-1">{{ item.name }}</h5>
+            <p class="text-muted small mb-0">{{ item.Description }}</p>
+          </td>
+          <td class="align-middle text-center">
+            {{ item.price | currency }}
+          </td>
+          <td class="align-middle text-center">
+            <div class="qty-box">
+              
+              <input type="button" class="btn btn-outline-secondary btn-sm" (click)=" decreaseQty(item)" value="-">
+              <span class="mx-2 font-weight-bold">{{item.qty}}</span>
+              <input type="button" class="btn btn-outline-secondary btn-sm" (click)=" increaseQty(item)" value="+">
+              
+            </div>
+          </td>
+          <td class="align-middle text-center font-weight-bold text-success">
+            {{ item.qty * item.price | currency }}
+          </td>
+          <td class="align-middle text-center">
+            <button class="btn btn-danger btn-sm px-3" (click)="removeItem(item)">Remove</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Grand Total Section -->
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-6">
+      <div class="p-3 border rounded bg-light shadow-sm">
+        <h4 class="d-flex justify-content-between align-items-center">
+          <span>Grand Total:</span>
+          <span class="text-success">{{cartService.GetTotal()| currency}}</span>
+        </h4>
+        <button class="btn btn-success btn-lg btn-block mt-3" routerLink="/checkout">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

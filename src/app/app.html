@@ -1,0 +1,70 @@
+<div class="container">
+
+
+  <!-- Menu Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">PK Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/product">Product</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0"
+        routerLink="/cart"
+        >Cart ({{cartService.GetItem().length}})
+      </button>
+    </form>
+  </div>
+  </nav>
+
+  <br>
+
+
+    <router-outlet/>
+
+
+  <br>
+
+<!-- About Us -->
+  <div class="container">
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>
+      PK Store is a passionate team of tech enthusiasts bringing you top-tier laptops at competitive prices. From students and gamers to business professionals, we help you find the right device for your needs.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to make computing technology accessible to everyone. We believe in quality service, transparent pricing, and long-term customer relationships.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Contact Information</h2>
+    <ul class="contact-info">
+      <li><strong>📍 Location:</strong> 123 Tech Avenue, Silicon Valley, CA 90210</li>
+      <li><strong>📧 Email:</strong> pkstore.yahu.coom</li>
+      <li><strong>📞 Phone:</strong> 096 946 7504 / 088 326 8524</li>
+    </ul>
+  </div>
+</div>
+<div class="footer">
+  &copy; 2025  Pk Store. All rights reserved.
+</div>
+
+
+
+</div>
+

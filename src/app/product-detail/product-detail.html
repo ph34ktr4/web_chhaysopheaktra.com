@@ -1,0 +1,49 @@
+<div class="container my-5">
+
+
+    @if(product != null){
+          <div class="row">
+
+            <!-- Product Image -->
+            <div class="col-md-6 text-center">
+            <img [src]="product.imageUrl" onerror="this.src='/no_image.png';" 
+                alt="{{product.imageUrl}}" 
+                class="img-fluid product-image shadow-sm rounded">
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-md-6">
+            <h2 class="product-title">{{product.name}}</h2>
+            <h3 class="product-price">{{product.price | currency}}</h3>
+
+
+            <!-- Quantity -->
+            <div class="quantity my-3">
+                <div for="qty">In Stock :{{product.qty}}</div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="actions mt-3">
+                <button class="btn btn-outline-secondary mr-2" (click)="addToFavorites(product)">
+                Reload Product
+                </button> 
+                
+                <button class="btn btn-danger" (click)="onAddToCartfromdetail(product)">
+                Add To Cart
+                </button> 
+            </div>
+            </div>
+        </div>
+    }
+
+
+    @if(product == null) {
+        <div class="row">
+            <div class="col-md-12">
+            <div style="color: black; text-align: center; font-size: 30px; font-weight: bolder;">Product Not Found!</div>
+            </div>
+        </div>
+    }
+
+</div>
+

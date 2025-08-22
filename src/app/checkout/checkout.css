@@ -1,0 +1,20 @@
+.checkout-container {
+  max-width: 1000px;
+}
+
+.checkout-container h3 {
+  font-weight: 600;
+}
+
+.card-title {
+  font-weight: 500;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}

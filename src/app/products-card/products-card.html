@@ -1,0 +1,46 @@
+<div class="card border-0 position-relative text-center p-3 shadow-sm">
+
+  <!-- Stock -->
+  <p class="qtyfield">In stock: {{product.qty}}</p>
+
+  <!-- Image with link to details -->
+  <div 
+    class="product-card mb-3" 
+    style="cursor: pointer;" 
+    [routerLink]="['/product-detail']"
+    [queryParams]="{ product_id: product.id }">
+    
+    <img [src]="product.imageUrl"
+         alt="{{product.name}}"
+         onerror="this.src='/no_image.png';" 
+         class="product-image">
+  </div>
+
+  <!-- Product Name -->
+  <h2 class="product-title">{{product.name}}</h2>
+  
+  <!-- Price (USD) -->
+  <div class="price">{{product.price | currency}}</div>
+  
+  <!-- Price (KHR) -->
+  <div class="price">{{product.price | convertToKhr}}៛</div>
+
+  <!-- Rating -->
+  <div class="stars">★★★★★</div>
+
+  <!-- See more link to detail -->
+  <div 
+    [routerLink]="['/product-detail']" 
+    [queryParams]="{ product_id: product.id }"
+    class="product-description d-block mt-2"
+    style="cursor: pointer; text-decoration: underline; color: #007bff;">
+    See more...
+</div>
+
+  <!-- Add To Cart Button -->
+  <input 
+    type="button" 
+    class="buy-button mt-3 btn btn-success" 
+    value="Add To Cart" 
+    (click)="onAddToCart(product)">
+</div>

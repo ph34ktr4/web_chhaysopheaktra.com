@@ -1,0 +1,74 @@
+<div class="container checkout-container my-5 p-4 shadow rounded bg-white">
+  <h3 class="mb-4 text-center text-primary">💳 Checkout</h3>
+
+  <div class="row">
+    <!-- Billing Details -->
+    <div class="col-md-7">
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+          <h5 class="card-title mb-3 text-secondary">Billing Information</h5>
+          <form>
+            <div class="form-group mb-3">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" class="form-control" placeholder="+855 123 456 789" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="address">Shipping Address</label>
+              <textarea id="address" rows="3" class="form-control" placeholder="Enter your full address" required></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-md-5">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3 text-secondary">🛍️ Order Summary</h5>
+
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Product 1</h6>
+                <small class="text-muted">x2</small>
+              </div>
+              <span class="text-muted">$40</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Product 2</h6>
+                <small class="text-muted">x1</small>
+              </div>
+              <span class="text-muted">$25</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Total (USD)</strong>
+              <strong class="text-success">$65</strong>
+            </li>
+          </ul>
+
+          <h6 class="mb-3">Payment Method</h6>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="payment" id="cod" checked>
+            <label class="form-check-label" for="cod">Cash on Delivery</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="payment" id="card">
+            <label class="form-check-label" for="card">Credit/Debit Card</label>
+          </div>
+
+          <button class="btn btn-success btn-lg btn-block">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
